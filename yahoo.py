@@ -128,7 +128,7 @@ def archive_db(yga):
         print "* Downloading database table '%s' (%d/%d)" % (table['name'], n, nts)
 
         name = basename(table['name']) + '.csv'
-        uri = "https://groups.yahoo.com/neo/groups/ulscr/database/%s/records/export?format=csv" % (table['tableId'],)
+        uri = "https://groups.yahoo.com/neo/groups/%s/database/%s/records/export?format=csv" % (yga.group, table['tableId'])
         with open(name, 'w') as f:
             yga.download_file(uri, f)
 
